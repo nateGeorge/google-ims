@@ -21,7 +21,7 @@ Example of using all available current options:
 
 const googleIms = require('google-ims');
 
-let client = googleIms('014105325106034184479:5pddhcivqow', 'AIzaSyBm5dbgDbWcZaYGlWFIK1ok7sjm3JcZYOw');
+let client = googleIms('CSEID', 'APIKEY');
 
 client.search('new zealand', {
 	page: 2, // 10 results per page
