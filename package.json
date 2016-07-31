@@ -1,5 +1,5 @@
 {
-  "name": "google-images",
+  "name": "google-ims",
   "version": "1.0.0",
   "description": "Search images using Google Images",
   "keywords": [
@@ -9,8 +9,7 @@
     "image search"
   ],
   "license": "MIT",
-  "author": "Vadim Demedes <vdemedes@gmail.com>",
-  "repository": "vdemedes/google-images",
+  "repository": "nateGeorge/google-ims",
   "files": [
     "index.js"
   ],
@@ -29,7 +28,4 @@
     "test": "xo && nyc ava --serial --verbose",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
-  "xo": {
-    "extends": "vdemedes"
-  }
 }

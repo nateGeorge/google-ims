@@ -1,11 +1,6 @@
 # google-images
 
-[![Build Status](https://travis-ci.org/vdemedes/google-images.svg?branch=master)](https://travis-ci.org/vdemedes/google-images)
-[![Coverage Status](https://coveralls.io/repos/vdemedes/google-images/badge.svg?branch=master&service=github)](https://coveralls.io/github/vdemedes/google-images?branch=master)
-
-This module for Node.js helps searching images using Google Images.
-It provides just one method, *search*, simplicity FTW.
-
+Provides a method in Node.js for searching Google Images.
 
 ## Installation
 
@@ -55,7 +50,7 @@ client.search('Steve Angello', {
 
 ## Set up Google Custom Search Engine
 
-Google deprecated their public Google Images API, so to search for images you need to sign up for Google Custom Search Engine.
+You need to sign up for Google Custom Search Engine.
 Here are the steps you need to do:
 
 ### 1. Create a Google Custom Search Engine
@@ -86,4 +81,4 @@ $ npm test
 
 ## License
 
-MIT © [Vadym Demedes](http://vadimdemedes.com)
+MIT
