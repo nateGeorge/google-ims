@@ -13,40 +13,41 @@ $ npm install google-ims --save
 
 **Note**: You'll need to [set up your own Google Custom Search Engine](#set-up-google-custom-search-engine) to search for images.
 
+[See Google's page on CSE parameters for more info on the options.](https://developers.google.com/custom-search/json-api/v1/reference/cse/list)
+Example of using all available current options:
+
 ```js
-const googleImages = require('google-images');
+'use strict' // need this for 'let' to work
 
-let client = googleImages('CSE ID', 'API KEY');
+const googleIms = require('google-ims');
 
-client.search('Steve Angello')
-	.then(function (images) {
-		/*
-		[{
-			"url": "http://steveangello.com/boss.jpg",
-			"type": "image/jpeg",
-			"width": 1024,
-			"height": 768,
-			"size": 102451,
-			"thumbnail": {
-				"url": "http://steveangello.com/thumbnail.jpg",
-				"width": 512,
-				"height": 512
-			}
-		}]
-		 */
+let client = googleIms('CSEID', 'APIKEY');
+
+client.search('sheep', {
+	// no options are required, this demonstrates use of all available one in the package
+	page: 2, // 10 results per page
+	size: 'large', // can be: icon, small, medium, large, xlarge, xxlarge, huge
+	safe: 'off', // high, medium, off
+	imgType: 'face', // clipart, face, lineart, news, photo
+	colorType: 'mono', // color, gray, mono
+	domColor: 'black', // black, blue, brown, gray, green, pink, purple, teal, white, yellow
+	dateRestrict: 'y[2]', // only show results from the last 2 years, can be d[#], w[#], m[#], y[#] for days, weeks, etc
+	fileType: 'png',
+	gl: 'NZ', // country code for results, New Zealand in this case, http://www.spoonfork.org/isocodes.html
+	googlehost: 'google.co.nz', // google domain to use, in this case New Zealand
+	num: 1; // number of results per page, default 10
+	
+}).then(function (images) {
+	images.forEach(function(i, e, a) {
+		console.log(images)
 	});
-
-// paginate results
-client.search('Steve Angello', {
-	page: 2
 });
 
-// search for certain size
-client.search('Steve Angello', {
-	size: 'large'
-});
+/* results will look like this
+
+*/
+
 ```
-
 
 ## Set up Google Custom Search Engine
 
@@ -82,3 +83,7 @@ $ npm test
 ## License
 
 MIT
+
+## Origin
+
+Originally from https://github.com/vdemedes/google-images, but I wanted to add in some functionality that vdemedes didn't want to.

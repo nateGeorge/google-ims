@@ -51,7 +51,13 @@ Client.prototype._buildOptions = function (query, options) {
 		// defaults to 10 results per query
 		// starts at index 1
 		// 'page 2' would start at index 11
-		result.start = 10*(options.page-1)+1;
+		if (options.num) {
+			result.start = options.num*(options.page-1)+1;
+		}
+		else {
+			// default of 10 results per page
+			result.start = 10*(options.page-1)+1;
+		}
 	}
 
 	if (options.size) {
@@ -72,7 +78,31 @@ Client.prototype._buildOptions = function (query, options) {
 	}
 	
 	if (options.imgColorType) {
-		result.imgColorType = options.imgColorType;
+		result.imgColorType = options.colorType;
+	}
+	
+	if (options.domColor) {
+		result.imgDominantColor = options.domColor;
+	}
+	
+	if (options.dateRestrict) {
+		result.dateRestrict = options.dateRestrict;
+	}
+	
+	if (options.fileType) {
+		result.fileType = options.fileType;
+	}
+	
+	if (options.gl) {
+		result.gl = options.gl;
+	}
+	
+	if (options.googlehost) {
+		result.googlehost = options.googlehost;
+	}
+	
+	if (options.num) {
+		result.num = options.num;
 	}
 
 	return result;
