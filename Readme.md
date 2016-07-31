@@ -5,7 +5,7 @@ Provides a method in Node.js for searching Google Images.
 ## Installation
 
 ```
-$ npm install google-images --save
+$ npm install google-ims --save
 ```
 
 

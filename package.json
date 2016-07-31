@@ -27,5 +27,5 @@
   "scripts": {
     "test": "xo && nyc ava --serial --verbose",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
-  },
+  }
 }
