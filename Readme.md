@@ -21,15 +21,15 @@ Example of using all available current options:
 
 const googleIms = require('google-ims');
 
-let client = googleIms('CSEID', 'APIKEY');
+let client = googleIms('014105325106034184479:5pddhcivqow', 'AIzaSyBm5dbgDbWcZaYGlWFIK1ok7sjm3JcZYOw');
 
-client.search('sheep', {
-	// no options are required, this demonstrates use of all available one in the package
+client.search('new zealand', {
 	page: 2, // 10 results per page
 	size: 'large', // can be: icon, small, medium, large, xlarge, xxlarge, huge
 	safe: 'off', // high, medium, off
+	// these next three options don't seem to be working currently
 	imgType: 'face', // clipart, face, lineart, news, photo
-	colorType: 'mono', // color, gray, mono
+	colorType: 'color', // color, gray, mono
 	domColor: 'black', // black, blue, brown, gray, green, pink, purple, teal, white, yellow
 	dateRestrict: 'y[2]', // only show results from the last 2 years, can be d[#], w[#], m[#], y[#] for days, weeks, etc
 	fileType: 'png',
@@ -46,17 +46,16 @@ client.search('sheep', {
 /* output will look like this:
 
 [ { type: 'image/png',
-    width: 428,
-    height: 280,
-    size: 224181,
-    url: 'http://www.archaeology.org/images/SO2013/Wolf_Rites/Sheep.png',
+    width: 620,
+    height: 349,
+    size: 621748,
+    url: 'http://www.stuff.co.nz/content/dam/images/1/b/4/w/i/b/image.related.StuffLandscapeSixteenByNine.620x349.1b5jgj.png/1461229326837.png',
     thumbnail: 
-     { url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi01q7-f6K2vMmM6MGRuc7hVTBGgiP6ZZpbsjXIvNsp7EVt3P5HPPa1g',
-       width: 126,
-       height: 82 } } ]
+     { url: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR5jJP-Opup26AynNIJYrcgKYVLFCC3jWwCI_auwCUOopybFPL9_l1VOm6r',
+       width: 136,
+       height: 77 } } ]
 
 */
-
 ```
 
 ## Set up Google Custom Search Engine
