@@ -48,11 +48,31 @@ Client.prototype._buildOptions = function (query, options) {
 	};
 
 	if (options.page) {
-		result.start = options.page;
+		// defaults to 10 results per query
+		// starts at index 1
+		// 'page 2' would start at index 11
+		result.start = 10*(options.page-1)+1;
 	}
 
 	if (options.size) {
 		result.imgSize = options.size;
+	}
+	
+	if (options.safe) {
+		result.safe = options.safe;
+	}
+	
+	if (options.filter) {
+		// 1 = filter duplicates, 0 = don't filter
+		result.filter = options.filter;
+	}
+	
+	if (options.imgType) {
+		result.imgType = options.imgType;
+	}
+	
+	if (options.imgColorType) {
+		result.imgColorType = options.imgColorType;
 	}
 
 	return result;
