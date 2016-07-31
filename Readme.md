@@ -35,7 +35,7 @@ client.search('sheep', {
 	fileType: 'png',
 	gl: 'NZ', // country code for results, New Zealand in this case, http://www.spoonfork.org/isocodes.html
 	googlehost: 'google.co.nz', // google domain to use, in this case New Zealand
-	num: 1; // number of results per page, default 10
+	num: 1 // number of results per page, default 10
 	
 }).then(function (images) {
 	images.forEach(function(i, e, a) {
@@ -43,7 +43,17 @@ client.search('sheep', {
 	});
 });
 
-/* results will look like this
+/* output will look like this:
+
+[ { type: 'image/png',
+    width: 428,
+    height: 280,
+    size: 224181,
+    url: 'http://www.archaeology.org/images/SO2013/Wolf_Rites/Sheep.png',
+    thumbnail: 
+     { url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi01q7-f6K2vMmM6MGRuc7hVTBGgiP6ZZpbsjXIvNsp7EVt3P5HPPa1g',
+       width: 126,
+       height: 82 } } ]
 
 */
 

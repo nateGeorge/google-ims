@@ -77,7 +77,7 @@ Client.prototype._buildOptions = function (query, options) {
 		result.imgType = options.imgType;
 	}
 	
-	if (options.imgColorType) {
+	if (options.colorType) {
 		result.imgColorType = options.colorType;
 	}
 	
